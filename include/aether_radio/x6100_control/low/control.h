@@ -170,7 +170,8 @@ typedef union {
     uint32_t i;
     struct {
         uint16_t adc_dac_gain_offset;  // bf16
-        uint16_t dac_gain_offset;  // bf16
+        uint8_t dac_gain_offset;
+        uint8_t adc_dac_pwr_mul_offset;
     } v;
 } x6100_reg_dac_adc_offsets_t;
 

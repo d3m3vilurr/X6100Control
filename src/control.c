@@ -230,12 +230,16 @@ void x6100_control_adc_dac_gain_set(float gain_db) {
 }
 
 void x6100_control_dac_gain_set(float gain_db) {
-    union {
-        float f;
-        uint32_t i;
-    } val = {gain_db};
+    uint8_t val = (uint8_t)(gain_db * 10);
     x6100_reg_dac_adc_offsets_t reg = {x6100_control_get(x6100_dac_adc_offsets)};
-    reg.v.dac_gain_offset = val.i >> 16;
+    reg.v.dac_gain_offset = val;
+    x6100_control_cmd(x6100_dac_adc_offsets, reg.i);
+}
+
+void x6100_control_adc_dac_pwr_multiplier_set(float pwr_mul) {
+    uint8_t val = (uint8_t)(pwr_mul * 10);
+    x6100_reg_dac_adc_offsets_t reg = {x6100_control_get(x6100_dac_adc_offsets)};
+    reg.v.adc_dac_pwr_mul_offset = val;
     x6100_control_cmd(x6100_dac_adc_offsets, reg.i);
 }
 

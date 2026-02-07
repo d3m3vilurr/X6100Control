@@ -38,6 +38,7 @@ AETHER_X6100CTRL_API void x6100_control_txpwr_set(float pwr);       /* TX power 
 AETHER_X6100CTRL_API void x6100_control_fftdec_set(uint8_t val);
 AETHER_X6100CTRL_API void x6100_control_adc_dac_gain_set(float gain_db);  /* ADC/DAC gain offset */
 AETHER_X6100CTRL_API void x6100_control_dac_gain_set(float gain_db);  /* DAC gain offset */
+AETHER_X6100CTRL_API void x6100_control_adc_dac_pwr_multiplier_set(float pwr_mul); /* ADC/DAC pwr multiplier offset */
 AETHER_X6100CTRL_API void x6100_control_bf16_flow_set(bool on);  /* BF16 flow */
 AETHER_X6100CTRL_API void x6100_control_fm_emp(bool on);  /* FM de-emphasis (pre-emphasis) */
 AETHER_X6100CTRL_API void x6100_control_sql_set(uint8_t sql);       /* Voice SQL 0 - 100 */
